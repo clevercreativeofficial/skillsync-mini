@@ -1,6 +1,5 @@
 import React from 'react'
 import Container_lg from '@/components/container_lg'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 const Footer = () => {
@@ -9,7 +8,14 @@ const Footer = () => {
             <Container_lg>
                 <div className='flex items-center justify-center border-t border-foreground/10 pt-6'>
                     <div className='flex flex-col items-center text-center gap-2'>
-                        <h1 className='title'>Skillsync <span className='text-foreground'>Mini</span></h1>
+                        <Link href='/'>
+                            <span className='block relative'>
+                                <h1 className='title text-3xl'>
+                                    Skill<span className='text-foreground'>Sync.</span>
+                                </h1>
+                                <small className='uppercase absolute -top-1 -right-6  text-foreground'>mini</small>
+                            </span>
+                        </Link>
                         <p className='text-sm text-foreground/70'>
                             © {new Date().getFullYear()} Skillsync Mini. All rights reserved.
                             <br />
