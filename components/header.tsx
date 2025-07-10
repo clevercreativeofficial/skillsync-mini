@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const header = () => {
+const Header = () => {
     const path = usePathname()
     return (
         <nav className='sticky top-0 w-full bg-background text-foreground z-50'>
@@ -14,7 +14,7 @@ const header = () => {
                 <div className='flex items-center justify-between border-b border-foreground/10 py-6'>
                     <Link href='/'>
                         <span className='block relative'>
-                            <h1 className='title text-3xl'>
+                            <h1 className='title text-3xl z-50 text-primary'>
                                 Skill<span className='text-foreground'>Sync.</span>
                             </h1>
                             <small className='uppercase absolute -top-1 -right-6  text-foreground'>mini</small>
@@ -28,8 +28,12 @@ const header = () => {
                             <li className={`${path === '/jobs' ? 'text-accent' : ''}`}>Explore Jobs</li>
                         </Link>
                         <div className='flex sm:flex-row flex-col items-center gap-4'>
-                            <Button className='sm:w-fit w-full'>Login</Button>
-                            <Button className='sm:w-fit w-full bg-foreground'>Register</Button>
+                            <Link href='/login'>
+                                <Button className='sm:w-fit w-full'>Login</Button>
+                            </Link>
+                            <Link href='/sign-up'>
+                                <Button className='sm:w-fit w-full bg-foreground'>Sign Up</Button>
+                            </Link>
                         </div>
                     </ul>
                     <div className='sm:hidden'>
@@ -41,4 +45,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header
